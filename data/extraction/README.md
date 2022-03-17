@@ -2,7 +2,7 @@
 
 ## Summary
 
-Obtain a CSV containing some data extracted from Comundi's training pages: https://www.comundi.fr/
+Obtain a CSV containing some training data extracted from a French training organization: https://www.gereso.com/
 
 In this repository, we provide a CSV file containing an example of the expected output (which may not be up to date). This CSV is using coma as a delimiter and is encoded in UTF-8. If you open this file using Excel you may have to use data import. Your CSV is not expected to 100% match the provided file (data evolves on a regular basis).
 
@@ -20,7 +20,7 @@ Internally, we use [Scrapy](https://scrapy.org/).
 - `url` Training page URL
 - `name` Training title
 - `sku` Unique reference of the training
-- `objectives` Training objectives, full HTML content, if present
+- `program` Training program, full HTML content, if present
 - `parsed_duration` Duration of the training
 - `parsed_price` Basic price (VAT excluded, discount excluded) of the training, if present
 
@@ -31,10 +31,10 @@ You must store a raw version of above fields (as they appear in page/HTML code).
 
 ## Hints
 
-- You can use the header menu to crawl training categories
+- You can use the category list from home page to crawl training categories and find links to training pages, for example: https://www.gereso.com/formations/pratiques-rh/formation-l-essentiel-de-la-gestion-administrative-des-rh
 - You can use RegEx to process scrapped data formats for duration and price
 - Use the CSV in the repository to look into example results (data may be slightly out of date)
 - You don't need to execute JavaScript (using Selenium or Chrome Headless) to extract data
-- Attempt to keep your code logic and simple, there are no edge cases to solve in this assignment; you may find exception values such as _2 + 2_ or _1 jour + 2 h en classe virtuelle (post formation)_ that you are allowed to discard and ignore
+- Attempt to keep your code logic and simple, there are no edge cases to solve in this assignment; you may find multiple price values, just take the first one into account
 
 _Do not hesitate to contact us for questions or clarification._
